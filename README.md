@@ -1,229 +1,382 @@
-<div align="center">
-  <br />
-  <a href="https://github.com/your-username/whiz-pos">
-    <img src="https://coresg-normal.trae.ai/api/ide/v1/text-to-image?prompt=modern%20minimal%20POS%20system%20logo%20with%20gradient%20blue%20and%20cyan%20colors&image_size=square_hd" alt="WHIZ POS Logo" width="140" height="140" style="border-radius: 24px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
-  </a>
+# <div align="center">
 
-  <h1 align="center">WHIZ POS</h1>
+<img src="./assets/logo.png" width="170" alt="WHIZ POS Logo" />
 
-  <p align="center">
-    The most powerful, multi-outlet point-of-sale system for modern businesses.
-    <br />
-    <a href="https://whizpos.com"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/your-username/whiz-pos/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/your-username/whiz-pos/issues">Request Feature</a>
-  </p>
-</div>
+# WHIZ POS
 
-<br />
+### Enterprise-Grade Multi-Outlet Point of Sale System
 
-<div align="center">
+Build, manage, and scale retail operations across unlimited outlets with real-time synchronization, offline-first reliability, intelligent outlet discovery, inventory management, and advanced business analytics.
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/whiz-pos?style=for-the-badge&logo=github&colorB=00b894&label=Stars)](https://github.com/your-username/whiz-pos/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/whiz-pos?style=for-the-badge&logo=github&colorB=74b9ff&label=Forks)](https://github.com/your-username/whiz-pos/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/your-username/whiz-pos?style=for-the-badge&logo=github&colorB=fd79a8&label=Issues)](https://github.com/your-username/whiz-pos/issues)
-[![GitHub license](https://img.shields.io/github/license/your-username/whiz-pos?style=for-the-badge&logo=github&colorB=fdcb6e&label=License)](https://github.com/your-username/whiz-pos/blob/main/LICENSE)
-[![Version](https://img.shields.io/badge/version-8.0.0-00cec9?style=for-the-badge&logo=npm)]()
+<p align="center">
+
+<a href="https://github.com/mburuwhiz/Whiz_POS_multioutlets/stargazers">
+<img src="https://img.shields.io/github/stars/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="Stars">
+</a>
+
+<a href="https://github.com/mburuwhiz/Whiz_POS_multioutlets/network/members">
+<img src="https://img.shields.io/github/forks/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="Forks">
+</a>
+
+<a href="https://github.com/mburuwhiz/Whiz_POS_multioutlets/issues">
+<img src="https://img.shields.io/github/issues/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="Issues">
+</a>
+
+<a href="./LICENSE">
+<img src="https://img.shields.io/github/license/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="License">
+</a>
+
+</p>
+
+<p align="center">
+
+🚀 Real-Time Sync   •  
+🌐 Offline First   •  
+🏪 Multi-Outlet   •  
+📡 Auto Discovery   •  
+📦 Smart Inventory   •  
+📊 Analytics
+
+</p>
+
+<p align="center">
+<b>The modern POS infrastructure built for ambitious businesses.</b>
+</p>
 
 </div>
 
 ---
 
-## 🌐 About The Project
+## ✨ Overview
 
-WHIZ POS is a **next-generation, multi-outlet point-of-sale system** built for modern businesses. It combines the power of Electron, React, and cutting-edge sync technology to deliver an unparalleled retail experience.
+WHIZ POS is a modern, enterprise-grade Point of Sale ecosystem designed for businesses operating across multiple stores, branches, warehouses, and retail locations.
 
-### 🚀 Key Features
+Unlike traditional POS systems that struggle with synchronization and scalability, WHIZ POS provides a centralized management platform with distributed outlet operations, ensuring every branch remains connected, synchronized, and productive.
 
-Here's what makes WHIZ POS special:
+Whether you're running a supermarket chain, pharmacy network, restaurant franchise, hardware store, or wholesale distribution business, WHIZ POS keeps everything under one intelligent platform.
 
-* **💻 Multi-Outlet Architecture**: One central server, unlimited connected outlets.
-* **🔄 Real-Time Sync**: Automatic, bidirectional sync between server and outlets.
-* **📡 mDNS Discovery**: Outlets automatically discover the server on the local network.
-* **🌐 Offline-First**: Outlets keep working even when disconnected from the server.
-* **📦 Inventory Management**: Full-featured stock control with per-outlet assignments.
-* **💳 Sales Processing**: Quick, intuitive checkout with customizable receipts.
-* **👥 User Roles & Permissions**: Cashiers, managers, and admins — each with tailored access.
-* **🔍 Credit Customers**: Track credit sales and customer balances effortlessly.
-* 📊 Powerful Reports: Real-time analytics, charts, and exportable reports.
-* **🖨️ Receipt Printing**: Built-in support for thermal printers.
+---
 
-<br>
+## 📸 Preview
 
-## 🛠️ Built With
+> Add screenshots to make your repository significantly more attractive.
 
-This project wouldn't be possible without these amazing tools & technologies:
+### Dashboard
 
-<div align="center">
-  <a href="https://react.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  </a>
-  <a href="https://www.electronjs.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Electron-20232A?style=for-the-badge&logo=electron&logoColor=47848F" alt="Electron" />
-  </a>
-  <a href="https://www.typescriptlang.org/" target="_blank">
-    <img src="https://img.shields.io/badge/TypeScript-20232A?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript" />
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Tailwind_CSS-20232A?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4" alt="Tailwind CSS" />
-  </a>
-  <a href="https://vitejs.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/Vite-20232A?style=for-the-badge&logo=vite&logoColor=646CFF" alt="Vite" />
-  </a>
-  <a href="https://zustand-demo.pmnd.rs/" target="_blank">
-    <img src="https://img.shields.io/badge/Zustand-20232A?style=for-the-badge&logo=npm&logoColor=CB3837" alt="Zustand" />
-  </a>
-  <a href="https://expressjs.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Express.js-20232A?style=for-the-badge&logo=express&logoColor=000000" alt="Express.js" />
-  </a>
-  <a href="https://lucide.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/Lucide_Icons-20232A?style=for-the-badge&logo=feather&logoColor=F5F5F5" alt="Lucide Icons" />
-  </a>
-</div>
+<img src="./assets/dashboard.png" alt="Dashboard" width="100%" />
 
-<br>
+### Point of Sale
 
-## 🚀 Getting Started
+<img src="./assets/pos-screen.png" alt="POS Screen" width="100%" />
 
-Follow these simple steps to get a local copy up and running.
+### Inventory Management
 
-### 📋 Prerequisites
+<img src="./assets/inventory.png" alt="Inventory" width="100%" />
 
-Before you begin, ensure you have met the following requirements:
+### Analytics & Reports
 
-* **Node.js**: `^24.11.0` ([Download Node.js](https://nodejs.org/))
-* **npm**: Latest version (usually ships with Node.js)
+<img src="./assets/reports.png" alt="Reports" width="100%" />
 
-Verify your installation by running:
-```bash
-node --version
-npm --version
+---
+
+## 🔥 Why WHIZ POS?
+
+### 🏪 Multi-Outlet Architecture
+
+Manage unlimited outlets from a single centralized server while maintaining independent outlet operations.
+
+### 🌐 Offline-First Reliability
+
+Sales never stop because of connectivity issues.
+
+Outlets continue operating independently and automatically synchronize when the connection is restored.
+
+### 🔄 Real-Time Synchronization
+
+Inventory, products, users, and sales remain synchronized across every connected outlet.
+
+### 📡 Intelligent Auto Discovery
+
+Outlets automatically discover available servers through mDNS technology.
+
+No manual IP configuration.
+
+No complex networking setup.
+
+### 📈 Built for Growth
+
+Scale from one store to hundreds of locations without changing your operational workflow.
+
+---
+
+## 🚀 Core Features
+
+| Feature                       | Description                                   |
+| ----------------------------- | --------------------------------------------- |
+| 🏪 Multi-Outlet Management    | Connect unlimited outlets to a central server |
+| 🔄 Real-Time Synchronization  | Instant updates across all branches           |
+| 🌐 Offline-First Operation    | Continue selling without network connectivity |
+| 📡 Automatic Server Discovery | Seamless outlet connection using mDNS         |
+| 📦 Inventory Management       | Product tracking and stock control            |
+| 💳 Sales Processing           | Fast and intuitive checkout workflow          |
+| 👥 User Roles & Permissions   | Admin, Manager, and Cashier access control    |
+| 🧾 Receipt Printing           | Thermal printer support                       |
+| 📊 Reports & Analytics        | Business intelligence dashboards              |
+| 💰 Credit Customer Management | Customer balances and repayments              |
+| 🔐 Secure Authentication      | Protected business operations                 |
+| ⚡ Desktop Native Experience   | Electron-powered application                  |
+
+---
+
+## 🏗️ System Architecture
+
+```text
+                     ┌──────────────────────┐
+                     │    MAIN SERVER       │
+                     │──────────────────────│
+                     │ Products             │
+                     │ Inventory            │
+                     │ Users                │
+                     │ Sales                │
+                     │ Reports              │
+                     └──────────┬───────────┘
+                                │
+      ┌─────────────────────────┼─────────────────────────┐
+      │                         │                         │
+      ▼                         ▼                         ▼
+
+┌──────────────┐        ┌──────────────┐        ┌──────────────┐
+│   OUTLET A   │        │   OUTLET B   │        │   OUTLET C   │
+│              │        │              │        │              │
+│ POS Sales    │        │ POS Sales    │        │ POS Sales    │
+│ Inventory    │        │ Inventory    │        │ Inventory    │
+└──────────────┘        └──────────────┘        └──────────────┘
+
+       ▲                       ▲                       ▲
+       └──────── Synchronization Engine ──────────────┘
 ```
 
-### 💾 Installation
+---
 
-1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/your-username/whiz-pos.git
-   cd whiz-pos
-   ```
+## 🛠 Technology Stack
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Set up your custom logo (optional but recommended)**:
-   Place your `logo.ico` file in the `assets/` directory at the root of the project.
-
-### 🏃 Running the App
-
-#### Development Mode
-
-To run the **server** in dev mode:
-```bash
-npm run dev:server
-```
-
-To run an **outlet** in dev mode:
-```bash
-npm run dev:outlet
-```
-
-If you want to just run the Vite dev server without Electron:
-```bash
-npm run dev:vite
-```
-
-#### Production Build
-
-To build the production-ready executable:
-```bash
-npm run build
-```
-
-The built files will be in the `dist/` directory, and the installers will be generated by Electron Builder.
-
-<br>
-
-## 📖 Usage
-
-Here's a quick guide to using WHIZ POS:
-
-### Server Setup
-1. Launch the server app
-2. Complete the initial setup wizard
-3. Add your products, users, and business details
-4. Wait for outlets to connect
-
-### Outlet Setup
-1. Launch the outlet app
-2. It will automatically discover the server using mDNS
-3. Send a connection request to the server
-4. The server will approve the outlet and assign products/users
-5. Start selling!
+| Layer              | Technology         |
+| ------------------ | ------------------ |
+| Frontend           | React 19           |
+| Desktop Runtime    | Electron           |
+| Language           | TypeScript         |
+| Styling            | Tailwind CSS       |
+| Build Tool         | Vite               |
+| State Management   | Zustand            |
+| Backend            | Express            |
+| Icons              | Lucide             |
+| Discovery Protocol | mDNS               |
+| Synchronization    | Custom Sync Engine |
 
 ---
 
 ## 📂 Project Structure
 
+```text
+Whiz_POS_multioutlets/
+│
+├── assets/
+│   ├── logo.png
+│   ├── dashboard.png
+│   ├── pos-screen.png
+│   ├── inventory.png
+│   └── reports.png
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── store/
+│   ├── lib/
+│   ├── sync/
+│   └── main/
+│
+├── electron.cjs
+├── preload.js
+├── vite.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
 ```
-whiz-pos/
-├── assets/               # Static assets (logo, images, etc.)
-├── src/                  # Source code
-│   ├── components/       # React components
-│   ├── pages/            # Full page components
-│   ├── store/            # Zustand state management
-│   ├── lib/              # Utility functions
-│   ├── sync/             # Sync system types & logic
-│   └── main/             # Electron main process code
-├── electron.cjs          # Main Electron entry point
-├── preload.js            # Preload script for Electron
-├── vite.config.ts        # Vite configuration
-├── tailwind.config.ts    # Tailwind CSS configuration
-├── tsconfig.json         # TypeScript configuration
-└── package.json          # Project dependencies & scripts
+
+---
+
+## ⚡ Quick Start
+
+### Clone Repository
+
+```bash
+git clone https://github.com/mburuwhiz/Whiz_POS_multioutlets.git
+cd Whiz_POS_multioutlets
 ```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Main Server
+
+```bash
+npm run dev:server
+```
+
+### Run Outlet
+
+```bash
+npm run dev:outlet
+```
+
+### Run Vite Development Server
+
+```bash
+npm run dev:vite
+```
+
+---
+
+## 🖥 Production Build
+
+Build production-ready installers:
+
+```bash
+npm run build
+```
+
+Generated files will be available in:
+
+```text
+dist/
+```
+
+---
+
+## 📋 Typical Workflow
+
+### Server Setup
+
+1. Launch the server application
+2. Complete initial configuration
+3. Add products
+4. Add users
+5. Configure outlets
+6. Start accepting connections
+
+### Outlet Setup
+
+1. Launch outlet application
+2. Automatic server discovery begins
+3. Send connection request
+4. Wait for approval
+5. Receive assigned products and users
+6. Start processing sales
+
+---
+
+## 🎯 Perfect For
+
+* Supermarkets
+* Retail Chains
+* Pharmacies
+* Restaurants
+* Hardware Stores
+* Electronics Shops
+* Fashion Stores
+* Franchise Networks
+* Wholesale Distribution Businesses
+* Multi-Branch Enterprises
+
+---
+
+## 🗺 Roadmap
+
+### Completed
+
+* [x] Multi-Outlet Architecture
+* [x] Real-Time Synchronization
+* [x] Offline-First Support
+* [x] Inventory Management
+* [x] Credit Customer Tracking
+* [x] Role-Based Permissions
+* [x] Automatic Server Discovery
+* [x] Receipt Printing
+
+### Upcoming
+
+* [ ] Mobile Companion App
+* [ ] Cloud Synchronization
+* [ ] Multi-Warehouse Support
+* [ ] Supplier Management
+* [ ] Barcode Management
+* [ ] AI Sales Insights
+* [ ] Automated Backups
+* [ ] Advanced Forecasting
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+If you have ideas, improvements, bug fixes, or feature requests:
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push your branch
+5. Open a Pull Request
+
+---
+
+## 🐛 Reporting Issues
+
+Found a bug?
+
+Please create an issue:
+
+https://github.com/mburuwhiz/Whiz_POS_multioutlets/issues
+
+---
+
+## ⭐ Support The Project
+
+If WHIZ POS helps your business or development workflow, consider giving the repository a star.
+
+It helps the project grow and reach more businesses.
 
 ---
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License.
+
+See the LICENSE file for more information.
 
 ---
 
-## 👥 Authors
+## 👨‍💻 Author
 
-* **Whizpoint Solutions** - *Initial work*
+### Whizpoint Solutions
 
-See also the list of [contributors](https://github.com/your-username/whiz-pos/contributors) who participated in this project.
-
----
-
-## 💬 Contact
-
-If you have any questions, feel free to reach out:
-
-- **Email**: support@whizpos.com
-- **Website**: [https://whizpos.com](https://whizpos.com)
-
----
-
-## 🙏 Acknowledgments
-
-We'd like to extend our gratitude to the following:
-
-* [React](https://react.dev/) for the amazing UI library
-* [Electron](https://www.electronjs.org/) for making cross-platform desktop apps easy
-* [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-* All open-source contributors who help make projects like this possible!
+Building modern business software for the next generation of retail.
 
 ---
 
 <div align="center">
-  Made with ❤️ by Whizpoint Solutions
+
+## WHIZ POS
+
+### Modern Retail Infrastructure
+
+Built with ❤️ by Whizpoint Solutions
+
+⭐ Star the repository if you find it useful
+
+<img src="./assets/logo.png" width="90" alt="WHIZ POS Logo" />
+
 </div>
