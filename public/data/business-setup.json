@@ -1,0 +1,10 @@
+{
+  "businessName": "Whiz Outlet Westlands",
+  "outletName": "Westlands Branch",
+  "isSetup": true,
+  "isLoggedIn": false,
+  "mode": "outlet",
+  "status": "pending",
+  "apiUrl": "http://localhost:3000",
+  "createdAt": "2023-01-01T00:00:00.000Z"
+}
