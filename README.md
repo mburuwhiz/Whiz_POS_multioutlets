@@ -1,382 +1,283 @@
-# <div align="center">
-
-<img src="./assets/logo.png" width="170" alt="WHIZ POS Logo" />
+<div align="center">
 
 # WHIZ POS
 
-### Enterprise-Grade Multi-Outlet Point of Sale System
+### Enterprise Multi-Outlet Retail Infrastructure
 
-Build, manage, and scale retail operations across unlimited outlets with real-time synchronization, offline-first reliability, intelligent outlet discovery, inventory management, and advanced business analytics.
+Real-time synchronization, offline-first architecture, intelligent outlet discovery, inventory control, credit management, reporting, and enterprise scalability — all in a single desktop platform.
 
-<p align="center">
+<br>
 
-<a href="https://github.com/mburuwhiz/Whiz_POS_multioutlets/stargazers">
-<img src="https://img.shields.io/github/stars/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="Stars">
-</a>
+[Getting Started](#quick-start) •
+[Features](#features) •
+[Architecture](#architecture) •
+[Roadmap](#roadmap)
 
-<a href="https://github.com/mburuwhiz/Whiz_POS_multioutlets/network/members">
-<img src="https://img.shields.io/github/forks/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="Forks">
-</a>
+<br>
 
-<a href="https://github.com/mburuwhiz/Whiz_POS_multioutlets/issues">
-<img src="https://img.shields.io/github/issues/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="Issues">
-</a>
-
-<a href="./LICENSE">
-<img src="https://img.shields.io/github/license/mburuwhiz/Whiz_POS_multioutlets?style=for-the-badge" alt="License">
-</a>
-
-</p>
-
-<p align="center">
-
-🚀 Real-Time Sync   •  
-🌐 Offline First   •  
-🏪 Multi-Outlet   •  
-📡 Auto Discovery   •  
-📦 Smart Inventory   •  
-📊 Analytics
-
-</p>
-
-<p align="center">
-<b>The modern POS infrastructure built for ambitious businesses.</b>
-</p>
+![GitHub stars](https://img.shields.io/github/stars/mburuwhiz/Whiz_POS_multioutlets?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/mburuwhiz/Whiz_POS_multioutlets?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/mburuwhiz/Whiz_POS_multioutlets?style=flat-square)
+![License](https://img.shields.io/github/license/mburuwhiz/Whiz_POS_multioutlets?style=flat-square)
 
 </div>
 
 ---
 
-## ✨ Overview
+# Built for Modern Retail
 
-WHIZ POS is a modern, enterprise-grade Point of Sale ecosystem designed for businesses operating across multiple stores, branches, warehouses, and retail locations.
+WHIZ POS is a multi-outlet point-of-sale platform designed for businesses that need centralized control while allowing branches to operate independently.
 
-Unlike traditional POS systems that struggle with synchronization and scalability, WHIZ POS provides a centralized management platform with distributed outlet operations, ensuring every branch remains connected, synchronized, and productive.
-
-Whether you're running a supermarket chain, pharmacy network, restaurant franchise, hardware store, or wholesale distribution business, WHIZ POS keeps everything under one intelligent platform.
+From a single shop to hundreds of locations, WHIZ POS keeps products, inventory, sales, users, and business intelligence synchronized across the entire organization.
 
 ---
 
-## 📸 Preview
+# Features
 
-> Add screenshots to make your repository significantly more attractive.
+## Multi-Outlet Operations
 
-### Dashboard
+* Unlimited outlet support
+* Centralized management
+* Branch independence
+* Outlet approval workflow
+* Outlet-specific inventory
+* Outlet-specific users
+* Outlet-specific reports
 
-<img src="./assets/dashboard.png" alt="Dashboard" width="100%" />
+## Sales & Checkout
 
-### Point of Sale
+* Lightning-fast POS
+* Barcode support
+* Custom receipts
+* Thermal printing
+* Split payments
+* Discounts
+* Returns handling
+* Credit sales
+* Customer balances
 
-<img src="./assets/pos-screen.png" alt="POS Screen" width="100%" />
+## Inventory Management
 
-### Inventory Management
+* Product catalog
+* Stock tracking
+* Categories
+* Variants
+* Low stock alerts
+* Stock transfers
+* Outlet assignments
+* Inventory history
 
-<img src="./assets/inventory.png" alt="Inventory" width="100%" />
+## Synchronization Engine
 
-### Analytics & Reports
+* Real-time synchronization
+* Conflict resolution
+* Incremental syncing
+* Background synchronization
+* Automatic recovery
+* Multi-device consistency
 
-<img src="./assets/reports.png" alt="Reports" width="100%" />
+## Offline-First Architecture
+
+* Continue selling offline
+* Local database support
+* Automatic recovery
+* Sync when reconnected
+* Zero downtime operations
+
+## Network Discovery
+
+* mDNS discovery
+* Automatic server detection
+* Plug-and-play deployment
+* No manual IP configuration
+
+## User Management
+
+* Administrators
+* Managers
+* Cashiers
+* Permissions system
+* Access control
+* Activity tracking
+
+## Reporting & Analytics
+
+* Daily sales
+* Outlet performance
+* Product performance
+* Revenue tracking
+* Profit insights
+* Inventory analytics
+* Exportable reports
+
+## Security
+
+* Authentication
+* Authorization
+* Protected routes
+* Secure synchronization
+* Data validation
+
+## Enterprise Ready
+
+* Multi-branch support
+* Scalable architecture
+* Large inventory support
+* Large transaction volumes
+* Business continuity design
 
 ---
 
-## 🔥 Why WHIZ POS?
-
-### 🏪 Multi-Outlet Architecture
-
-Manage unlimited outlets from a single centralized server while maintaining independent outlet operations.
-
-### 🌐 Offline-First Reliability
-
-Sales never stop because of connectivity issues.
-
-Outlets continue operating independently and automatically synchronize when the connection is restored.
-
-### 🔄 Real-Time Synchronization
-
-Inventory, products, users, and sales remain synchronized across every connected outlet.
-
-### 📡 Intelligent Auto Discovery
-
-Outlets automatically discover available servers through mDNS technology.
-
-No manual IP configuration.
-
-No complex networking setup.
-
-### 📈 Built for Growth
-
-Scale from one store to hundreds of locations without changing your operational workflow.
-
----
-
-## 🚀 Core Features
-
-| Feature                       | Description                                   |
-| ----------------------------- | --------------------------------------------- |
-| 🏪 Multi-Outlet Management    | Connect unlimited outlets to a central server |
-| 🔄 Real-Time Synchronization  | Instant updates across all branches           |
-| 🌐 Offline-First Operation    | Continue selling without network connectivity |
-| 📡 Automatic Server Discovery | Seamless outlet connection using mDNS         |
-| 📦 Inventory Management       | Product tracking and stock control            |
-| 💳 Sales Processing           | Fast and intuitive checkout workflow          |
-| 👥 User Roles & Permissions   | Admin, Manager, and Cashier access control    |
-| 🧾 Receipt Printing           | Thermal printer support                       |
-| 📊 Reports & Analytics        | Business intelligence dashboards              |
-| 💰 Credit Customer Management | Customer balances and repayments              |
-| 🔐 Secure Authentication      | Protected business operations                 |
-| ⚡ Desktop Native Experience   | Electron-powered application                  |
-
----
-
-## 🏗️ System Architecture
+# Architecture
 
 ```text
-                     ┌──────────────────────┐
-                     │    MAIN SERVER       │
-                     │──────────────────────│
-                     │ Products             │
-                     │ Inventory            │
-                     │ Users                │
-                     │ Sales                │
-                     │ Reports              │
-                     └──────────┬───────────┘
-                                │
-      ┌─────────────────────────┼─────────────────────────┐
-      │                         │                         │
-      ▼                         ▼                         ▼
+                     MAIN SERVER
 
-┌──────────────┐        ┌──────────────┐        ┌──────────────┐
-│   OUTLET A   │        │   OUTLET B   │        │   OUTLET C   │
-│              │        │              │        │              │
-│ POS Sales    │        │ POS Sales    │        │ POS Sales    │
-│ Inventory    │        │ Inventory    │        │ Inventory    │
-└──────────────┘        └──────────────┘        └──────────────┘
+        Products • Inventory • Users • Reports
 
-       ▲                       ▲                       ▲
-       └──────── Synchronization Engine ──────────────┘
+                              │
+                              │
+                              ▼
+
+      ┌────────────── Synchronization ──────────────┐
+      │                                             │
+      ▼                                             ▼
+
+   Outlet A          Outlet B          Outlet C
+
+      │                 │                 │
+
+      └──── Real-Time + Offline-First ───┘
 ```
 
 ---
 
-## 🛠 Technology Stack
+# Technology Stack
 
-| Layer              | Technology         |
-| ------------------ | ------------------ |
-| Frontend           | React 19           |
-| Desktop Runtime    | Electron           |
-| Language           | TypeScript         |
-| Styling            | Tailwind CSS       |
-| Build Tool         | Vite               |
-| State Management   | Zustand            |
-| Backend            | Express            |
-| Icons              | Lucide             |
-| Discovery Protocol | mDNS               |
-| Synchronization    | Custom Sync Engine |
+| Layer            | Technology                   |
+| ---------------- | ---------------------------- |
+| Frontend         | React                        |
+| Desktop Runtime  | Electron                     |
+| Language         | TypeScript                   |
+| Styling          | Tailwind CSS                 |
+| State Management | Zustand                      |
+| Build Tool       | Vite                         |
+| Backend          | Express                      |
+| Discovery        | mDNS                         |
+| Sync Engine      | Custom Synchronization Layer |
 
 ---
 
-## 📂 Project Structure
+# Project Structure
 
 ```text
 Whiz_POS_multioutlets/
-│
+
 ├── assets/
-│   ├── logo.png
-│   ├── dashboard.png
-│   ├── pos-screen.png
-│   ├── inventory.png
-│   └── reports.png
-│
 ├── src/
 │   ├── components/
 │   ├── pages/
 │   ├── store/
-│   ├── lib/
 │   ├── sync/
+│   ├── lib/
 │   └── main/
 │
 ├── electron.cjs
 ├── preload.js
 ├── vite.config.ts
-├── tailwind.config.ts
-├── tsconfig.json
-└── package.json
+├── package.json
+└── tsconfig.json
 ```
 
 ---
 
-## ⚡ Quick Start
-
-### Clone Repository
+# Quick Start
 
 ```bash
 git clone https://github.com/mburuwhiz/Whiz_POS_multioutlets.git
+
 cd Whiz_POS_multioutlets
-```
 
-### Install Dependencies
-
-```bash
 npm install
 ```
 
-### Run Main Server
+Run Server
 
 ```bash
 npm run dev:server
 ```
 
-### Run Outlet
+Run Outlet
 
 ```bash
 npm run dev:outlet
 ```
 
-### Run Vite Development Server
-
-```bash
-npm run dev:vite
-```
-
----
-
-## 🖥 Production Build
-
-Build production-ready installers:
+Build Production
 
 ```bash
 npm run build
 ```
 
-Generated files will be available in:
-
-```text
-dist/
-```
-
 ---
 
-## 📋 Typical Workflow
+# Use Cases
 
-### Server Setup
-
-1. Launch the server application
-2. Complete initial configuration
-3. Add products
-4. Add users
-5. Configure outlets
-6. Start accepting connections
-
-### Outlet Setup
-
-1. Launch outlet application
-2. Automatic server discovery begins
-3. Send connection request
-4. Wait for approval
-5. Receive assigned products and users
-6. Start processing sales
-
----
-
-## 🎯 Perfect For
-
-* Supermarkets
 * Retail Chains
+* Supermarkets
 * Pharmacies
-* Restaurants
 * Hardware Stores
 * Electronics Shops
-* Fashion Stores
+* Restaurants
+* Distribution Businesses
 * Franchise Networks
-* Wholesale Distribution Businesses
-* Multi-Branch Enterprises
+* Wholesale Operations
 
 ---
 
-## 🗺 Roadmap
+# Roadmap
 
-### Completed
+## Completed
 
-* [x] Multi-Outlet Architecture
-* [x] Real-Time Synchronization
-* [x] Offline-First Support
-* [x] Inventory Management
-* [x] Credit Customer Tracking
-* [x] Role-Based Permissions
-* [x] Automatic Server Discovery
-* [x] Receipt Printing
+* Multi-Outlet Architecture
+* Real-Time Sync
+* Offline-First Operations
+* Inventory Management
+* Credit Customers
+* Role Management
+* Receipt Printing
+* Automatic Discovery
 
-### Upcoming
+## Planned
 
-* [ ] Mobile Companion App
-* [ ] Cloud Synchronization
-* [ ] Multi-Warehouse Support
-* [ ] Supplier Management
-* [ ] Barcode Management
-* [ ] AI Sales Insights
-* [ ] Automated Backups
-* [ ] Advanced Forecasting
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-If you have ideas, improvements, bug fixes, or feature requests:
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push your branch
-5. Open a Pull Request
+* Mobile Companion App
+* Cloud Synchronization
+* Multi-Warehouse Support
+* Supplier Management
+* AI Sales Forecasting
+* Automated Backups
+* Advanced Analytics
 
 ---
 
-## 🐛 Reporting Issues
+# Contributing
 
-Found a bug?
-
-Please create an issue:
-
-https://github.com/mburuwhiz/Whiz_POS_multioutlets/issues
+Contributions, feature requests, and pull requests are welcome.
 
 ---
 
-## ⭐ Support The Project
+# License
 
-If WHIZ POS helps your business or development workflow, consider giving the repository a star.
-
-It helps the project grow and reach more businesses.
-
----
-
-## 📄 License
-
-Distributed under the MIT License.
-
-See the LICENSE file for more information.
-
----
-
-## 👨‍💻 Author
-
-### Whizpoint Solutions
-
-Building modern business software for the next generation of retail.
+MIT License
 
 ---
 
 <div align="center">
 
-## WHIZ POS
+WHIZ POS
 
-### Modern Retail Infrastructure
+Enterprise Retail Infrastructure
 
-Built with ❤️ by Whizpoint Solutions
-
-⭐ Star the repository if you find it useful
-
-<img src="./assets/logo.png" width="90" alt="WHIZ POS Logo" />
+Built for scale.
 
 </div>
