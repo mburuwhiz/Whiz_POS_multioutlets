@@ -37,6 +37,9 @@ app.commandLine.appendSwitch('disable-gpu-compositing');
 const cacheDir = path.join(os.tmpdir(), 'whiz-pos-cache');
 app.commandLine.appendSwitch('disk-cache-dir', cacheDir);
 // Prevent renderer process from accessing cache issues
+app.commandLine.appendSwitch('disable-http-cache');
+app.commandLine.appendSwitch('disable-site-isolation-trials');
+
 app.commandLine.appendSwitch('disable-features', 'BlockInsecurePrivateNetworkRequests');
 // Create cache directory to prevent missing dir errors
 fs.mkdir(cacheDir, { recursive: true }).catch(() => {});

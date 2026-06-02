@@ -55,7 +55,7 @@ test('Verify M-Pesa automation toggle in developer page', async ({ page }) => {
   });
 
   // Load the app
-  await page.goto('http://localhost:5173');
+  await page.goto('http://localhost:5174');
 
   await page.waitForTimeout(3000);
   await page.screenshot({ path: '/home/jules/verification/debug_screen7.png' });

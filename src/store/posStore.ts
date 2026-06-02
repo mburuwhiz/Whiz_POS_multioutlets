@@ -1071,6 +1071,7 @@ export const usePosStore = create<PosState>()(
             setTimeout(() => {
               const outletState = get();
               if (outletState.businessSetup?.outletId) {
+                outletState.processSyncQueue();
                 outletState.syncFromServer();
               }
             }, 0);
@@ -1320,6 +1321,7 @@ export const usePosStore = create<PosState>()(
           if (state.businessSetup?.mode === 'outlet') {
             const newPendingCustomers = [...state.pendingOutletCreditCustomers, customer];
             saveDataToFile('pending-outlet-credit-customers.json', newPendingCustomers);
+            setTimeout(() => { get().processSyncQueue(); get().syncFromServer(); }, 0);
             return { 
               creditCustomers: updatedCustomers, 
               pendingOutletCreditCustomers: newPendingCustomers 
@@ -1423,6 +1425,7 @@ export const usePosStore = create<PosState>()(
           if (state.businessSetup?.mode === 'outlet') {
             const newPendingExpenses = [...state.pendingOutletExpenses, expense];
             saveDataToFile('pending-outlet-expenses.json', newPendingExpenses);
+            setTimeout(() => { get().processSyncQueue(); get().syncFromServer(); }, 0);
             return { 
               expenses: updatedExpenses, 
               pendingOutletExpenses: newPendingExpenses 
@@ -1620,8 +1623,6 @@ export const usePosStore = create<PosState>()(
           if (state.businessSetup?.mode === 'outlet') {
             // For outlets: don't use the regular /api/sync endpoint at all
             // Outlets sync transactions via syncFromServer, not processSyncQueue is not needed for them
-            set({ syncQueue: [] });
-            saveDataToFile('sync-queue.json', []);
             return;
           }
 
