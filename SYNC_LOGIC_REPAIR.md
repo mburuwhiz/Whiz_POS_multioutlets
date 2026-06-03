@@ -1,66 +1,61 @@
-# Whiz POS - Synchronization & Logic Repair Specification
+# Whiz POS - Technical Repair & UI Optimization Specification
 
-This document outlines the technical logic and architectural requirements for a reliable bidirectional synchronization system between the Whiz POS Main Server and its Outlets.
-
----
-
-## 1. Identity & Session Management
-
-### 1.1 Unique Instance Identification
-Every Outlet must maintain a persistent, unique UUID generated at registration. This ID must be included in the header of every HTTP request and as a metadata field in all WebSocket messages.
-
-### 1.2 Heartbeat & Presence Detection
-- **Mechanism**: Outlets must emit a heartbeat message via WebSocket every 5 seconds.
-- **Server-Side Tracking**: The Server must maintain an in-memory map of active connections, updating the `lastSeen` timestamp in the database only on valid heartbeat reception.
-- **Status Transition**: An Outlet should be marked "Offline" only after 3 consecutive missed heartbeats (15 seconds) to account for minor network jitter.
+This document provides a comprehensive engineering blueprint to resolve synchronization failures, inventory latency, missing outlet reporting, and POS UI responsiveness.
 
 ---
 
-## 2. Scoped Data Synchronization (The "Private Club" Logic)
+## 1. Bidirectional Entity Sync (The "Unified Push/Pull" Logic)
 
-### 2.1 Mandatory Filtering
-The Server must enforce strict data scoping based on the Outlet ID.
-- **The "Empty set" Rule**: If an Outlet has 0 assigned products or users, the API response must return an empty array, never falling back to the global dataset.
-- **Filtering Logic**: All `sync-snapshot` and `sync-event` payloads must be pre-filtered on the Server before transmission. The Outlet should never receive data it is not authorized to handle.
+### 1.1 Guaranteed Upstream Persistence (Outlet → Server)
+- **Unified Entity Queue**: All entities (Transactions, Expenses, Customers, Suppliers) must be wrapped in a standard `SyncEnvelope` containing the `entityType`, `payload`, `timestamp`, and a `clientId`.
+- **The Persistence Lock**: The Outlet must store these envelopes in a local "Outbox" (persisted to SQLite).
+- **Atomic Push**: The Outlet attempts to flush the Outbox via a single `/api/sync/push` endpoint. The Server must process this within a database transaction and return a `processedIds` array.
+- **Deletion on ACK**: The Outlet only removes items from the Outbox that appear in the `processedIds` array. This ensures that a sale made on an Outlet *must* eventually appear on the Server.
 
-### 2.2 Inventory Isolation
-Outlets must operate within a "Stock Silo."
-- **Stock Resolution**: The `resolveOutletProductStock` logic must be restricted. If a product ID does not exist in the outlet's `currentStock` map, the stock level must be treated as `0`.
-- **Global Fallback Removal**: Remove all fallbacks to `product.stock` (the main store's stock) within the Outlet context.
-
----
-
-## 3. Reliable Messaging & Acknowledgment (The "Message Bridge")
-
-### 3.1 Transactional Sync (Outlet → Server)
-- **Local Persistence**: All upstream operations (sales, expenses, credit customers) must be saved to a local "Pending Queue" with a unique `batchId`.
-- **The ACK Protocol**: The Outlet must keep items in the Pending Queue until it receives an explicit `SYNC_ACK` message from the Server for that specific `batchId`.
-- **Sequential Processing**: To maintain data integrity, items should be processed in the order they were created (FIFO).
-
-### 3.2 Targeted Broadcasts (Server → Outlet)
-- **Scoped Events**: When data changes on the Server, the `sync-event` broadcast should not be global. The Server should iterate through connected clients and send the event only to Outlets whose assignments include the modified data.
-- **Snapshot Resync**: If a WebSocket connection is re-established after a disconnection, the Outlet should immediately trigger a `sync_request` to get the latest state and resolve any missed events.
+### 1.2 Multi-Entity Downstream Sync (Server → Outlet)
+- **Beyond Initial Setup**: Synchronization must be a continuous process, not a one-time event.
+- **Delta Syncing**: Instead of pulling the entire database, the Outlet should request "Deltas" (changes since `last_sync_timestamp`). This ensures that new Users, Expenses, and Suppliers are propagated efficiently and regularly.
 
 ---
 
-## 4. Environment & Runtime Configuration
+## 2. Real-time Inventory Reactivity (Server → Outlet)
 
-### 4.1 Filesystem Isolation
-To resolve "Access Denied (0x5)" errors on Windows:
-- **userData Path**: Relocate the Electron `userData` path to the user's local AppData folder (`app.getPath('userData')`) rather than system-wide directories.
-- **Cache Management**: Explicitly define the `disk-cache-dir` within a sub-folder of the user's AppData to ensure the application has full read/write/move permissions.
-
-### 4.2 GPU & Hardware Acceleration
-Maintain the following Chromium switches to prevent cache-related startup crashes:
-- Disable the shader disk cache.
-- Disable GPU compositing in environments with restrictive filesystem permissions.
+### 2.1 Push-Based Stock Updates
+- **The "Stock-Push" Event**: When stock is adjusted on the Server (e.g., adding 7 units to "Tea"), the Server must immediately emit a WebSocket `inventory_update` event to all connected Outlets assigned that product.
+- **Immediate State Hydration**: Upon receiving this event, the Outlet must update its local Zustand store (`products`) and SQLite database immediately. This transforms the POS UI from a "static page" into a "live reactive dashboard," changing "Out of Stock" to "Available" in milliseconds without a page refresh.
 
 ---
 
-## 5. Summary of System Flow
+## 3. Outlet Reporting & Operational Autonomy
 
-1. **Outlet Registration**: Establishes a permanent UUID and initial scoped assignments.
-2. **Presence**: Continuous heartbeat keeps the connection alive and updates the "Online" status.
-3. **Scoping**: All data transmitted is strictly filtered by the Outlet ID; no global fallbacks allowed.
-4. **Reliability**: Upstream data is queued locally and only cleared upon receiving a verified Server Acknowledgment.
-5. **Downstream**: The Server pushes targeted updates only to relevant Outlets based on their assignment maps.
+### 3.1 Local Reporting Engine
+- **End-of-Day Module**: Implement a dedicated `ClosingPage` on the Outlet.
+- **Calculated Summaries**: This page must calculate totals for Cash, M-Pesa, and Credit sales directly from the local SQLite transaction table for the current shift.
+- **Z-Report Entity**: When the cashier clicks "Close Day," the Outlet generates a `ClosingReport` entity. This entity is stored in the "Outbox" and synced to the Server just like a transaction, ensuring the Server has a record of the Outlet's self-reported totals.
+
+---
+
+## 4. POS UI Responsiveness & UX Performance
+
+### 4.1 Reactive UI Architecture
+- **Optimistic UI Updates**: When an item is added to the cart, the UI must reflect the change *instantly* before any background persistence occurs.
+- **Component Memoization**: Use `React.memo` and `useMemo` on the Product Grid and Cart Items to prevent unnecessary re-renders of the entire page when a single quantity changes.
+- **Virtualization**: If the inventory is large (100+ items), implement a virtualized grid to ensure that only the visible products are being rendered by the browser, drastically improving scroll and click responsiveness.
+- **Non-Blocking I/O**: Ensure that all disk writes (SQLite) and network requests are handled in the background, never locking the main UI thread.
+
+---
+
+## 5. Environment & Permission Repair
+
+### 5.1 Reliable Filesystem Access
+- **Path Resolution**: Abandon `C:\ProgramData` fallback. Exclusively use `app.getPath('userData')` which maps to `AppData/Roaming`, where the application always has full read/write/move permissions.
+- **Cache Cleanliness**: Implement a "Safety Switch" on startup that clears the GPU and Shader cache if a previous "Access Denied" error was logged, ensuring the next launch is clean.
+
+---
+
+## Summary of Corrected Flow
+
+1. **Sale at Outlet**: Instantly updates UI -> Saved to local "Outbox" -> Background push to Server -> Deleted from Outbox only on Server ACK.
+2. **Stock Update at Server**: Server adjusts stock -> WebSocket Push -> Outlet receives and updates UI instantly.
+3. **Daily Closing**: Cashier opens Closing Page -> Totals calculated from local DB -> Report printed and synced to Server.
+4. **General Data**: Users, Suppliers, and Customers are periodically pulled via Delta Sync to keep the Outlet's "Private Club" up to date.
